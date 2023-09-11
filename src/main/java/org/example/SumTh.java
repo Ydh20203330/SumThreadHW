@@ -2,17 +2,15 @@ package org.example;
 
 public class SumTh {
     public static void main(String[] args) {
-        int[] x = new int[100]; // 배열 생성
         int sum1, sum2;
-
-        for (int i = 0; i < 100; i++){
-            x[i] = i; // 배열에 0~99 저장
-        }
 
         int[] arr1= new int[50]; // 배열 1
         int[] arr2= new int[50]; // 배열 2
-        System.arraycopy(x, 0, arr1, 0, 50); // 배열을 잘라내기 위한 arraycopy()
-        System.arraycopy(x, 50, arr2, 0, 50); // 두 부분 0~49 50~99로 나눔
+
+        for (int i = 0; i < 50; i++){
+            arr1[i] = i; // 배열에 0~49 저장
+            arr2[i] = i + 50; // 배열에 50~99 저장
+        }
 
         SumThread th1 = new SumThread(arr1); // 스레드 1
         SumThread th2 = new SumThread(arr2); // 스레드 2

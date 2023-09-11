@@ -21,13 +21,13 @@ public class SumTh {
 
         try { // join이 제대로 수행됐는지 확인하기 위한 try-catch문
             th1.join(); // 스레드 1
-            th2.join();
-        } catch (InterruptedException e){
-            e.printStackTrace();
+            th2.join(); // 스레드 2
+        } catch (InterruptedException e){ // 인터럽트 에러 catch
+            e.printStackTrace(); 
         }
 
         int result = th1.getResult() + th2.getResult(); // 두 스레드의 계산값을 더함
-        System.out.println("최종 결과 : " + result);
+        System.out.println("최종 결과 : " + result); // 결과 출력
     }
 }
 

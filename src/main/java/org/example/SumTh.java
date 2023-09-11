@@ -2,7 +2,7 @@ package org.example;
 
 public class SumTh {
     public static void main(String[] args) {
-        int sum1, sum2;
+        int sum1, sum2; // 각 스레드 계산결과 확인용
 
         int[] arr1= new int[50]; // 배열 1
         int[] arr2= new int[50]; // 배열 2
@@ -22,7 +22,7 @@ public class SumTh {
             th1.join(); // 스레드 1
             th2.join(); // 스레드 2
         } catch (InterruptedException e){ // 인터럽트 에러 catch
-            e.printStackTrace(); 
+            e.printStackTrace();
         }
 
         sum1 = th1.getResult();

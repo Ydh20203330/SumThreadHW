@@ -3,6 +3,7 @@ package org.example;
 public class SumTh {
     public static void main(String[] args) {
         int[] x = new int[100]; // 배열 생성
+        int sum1, sum2;
 
         for (int i = 0; i < 100; i++){
             x[i] = i; // 배열에 0~99 저장
@@ -26,7 +27,11 @@ public class SumTh {
             e.printStackTrace(); 
         }
 
-        int result = th1.getResult() + th2.getResult(); // 두 스레드의 계산값을 더함
+        sum1 = th1.getResult();
+        sum2 = th2.getResult();
+        int result = sum1 + sum2; // 두 스레드의 계산 값을 더함
+        System.out.println("첫번째 스레드 계산 값은 : " + sum1);
+        System.out.println("두번째 스레드 계산 값은 : " + sum2);
         System.out.println("최종 결과 : " + result); // 결과 출력
     }
 }
